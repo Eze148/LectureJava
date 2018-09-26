@@ -4,17 +4,42 @@ public class Tabungan
     
 	public Tabungan(double initialBalance)
 	{
-        this.balance = initialBalance;
+		this.balance = initialBalance;
+	}
+	public void setTabungan(double setTabungan)
+	{
+		this.balance=setTabungan;
+	}
+	public boolean deposit(double amount)
+	{
+		if(amount < 0)
+		{
+			System.out.println("Input Invalid");
+			return false;
+		}
+		else{
+			balance+=amount;
+			return true;
+		}
     }
     
-	public void deposit(double amount)
+	public boolean withdraw(double amount)
 	{
-		this.balance+=amount;
-    }
-    
-	public void withdraw(double amount)
-	{
-		this.balance-=amount;
+		if(amount < 0)
+		{
+			System.out.println("Input Invalid");
+			return false;
+		}
+		else if(amount > balance)
+		{
+			System.out.println("Insufficient Funds");
+			return false;
+		}
+		else{
+			balance-=amount;
+			return true;
+		}
+		
     }
 	public double getBalance()
 	{

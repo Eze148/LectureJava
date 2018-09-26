@@ -1,14 +1,14 @@
 public class Debet extends Tabungan
 {   
-    double interestRate = 0.0;
-    public Debit(double balance, double interestRate)
-    {
-        this.interestRate=interestRate;
+    double value=0.0;
+    Debet(double balance){
+        super(balance);
     }
-    public void addInterest()
+
+    public void setor(double amount)
     {
-        double interest = (1+0.01*interestRate)
-        multiplier(interest);
-        return;
+        this.value=amount;
+        deposit(value);
+        System.out.println("Your balance is currently " +getBalance());
     }
 }

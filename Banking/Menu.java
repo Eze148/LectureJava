@@ -1,14 +1,15 @@
 import java.util.Scanner;
 
-public interface Menu
-{
-    public static void main(String[] args)
+class Menu
+{    public static void main(String[] args)
     {
-        Tabungan t = new Tabungan(2000.0);
+        Tabungan t = new Tabungan(10000.0);
         Scanner input = new Scanner(System.in);
         int pilihan;
         do
         {
+            Kredit kr = new Kredit(t.getBalance());
+            Debet db= new Debet(t.getBalance());
             System.out.println("Select a Menu: ");
             System.out.println("1. Check Balance");
             System.out.println("2. Deposit");
@@ -23,19 +24,17 @@ public interface Menu
             {
                 System.out.print("Input the amount you want to deposit: ");
                 double am=input.nextDouble();
-                t.deposit(am);
-                System.out.println();
-                System.out.println("Your Balance is currently "+t.getBalance());
+                db.setor(am);
+                t.setTabungan(db.getBalance());
             }
             else if(pilihan == 3)
             {
-                if(t.getBalance() > 5000.0)    // Balance must be above 5000 to make a withdrawal.
+                if(kr.getBalance() > 5000.0)    // Balance must be above 5000 to make a withdrawal.
                 {
-                    System.out.print("Input the amount you want to withdraw: ");
+                    System.out.println("Input the amount you want to withdraw: ");
                     double am=input.nextDouble();
-                    t.withdraw(am);
-                    System.out.println();
-                    System.out.println("Your Balance is currently "+t.getBalance());
+                    kr.tarik(am);
+                    t.setTabungan(kr.getBalance());
                 }
                 else
                 {
