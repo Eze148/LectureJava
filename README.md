@@ -11,3 +11,7 @@ Lecture File on Java OOP
 4 Switch-Case, Constructor, Encapsulation (Get-Set Method) 
 
 5 Array, Trailing, Enumeration (enum), Control Access(Packaging) + Interface
+
+6. Reusing Class
+	1. Aggregation (Composition)
+	2. Inheritance (Extending Class)
