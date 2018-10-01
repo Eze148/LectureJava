@@ -14,9 +14,9 @@ class Interface{
         Scanner in = new Scanner(System.in);
         System.out.println("Welcome");
         System.out.println("Please enter account name:");
-		String name = in.nextLine();
-		System.out.println("Please enter account number:");
-		long noRek = in.nextLong();
+	String name = in.nextLine();
+	System.out.println("Please enter account number:");
+	long noRek = in.nextLong();
         System.out.println("Input Saldo Awal: ");
         double saldoAwal=in.nextDouble();
         
