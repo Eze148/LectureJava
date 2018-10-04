@@ -1,9 +1,5 @@
 class Interface
 {
-    static void MainMenu(){
-        System.out.println();
-        System.out.println("Main Menu");
-    }
     public static void main (String[] args)
     {
         Dokter d = new Dokter("Nicky Logan",35);
